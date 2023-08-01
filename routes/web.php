@@ -83,5 +83,13 @@ Route::get('/', function(){
     $data = [];
     $data['alor_feedbacks'] = DB::table('alor_feedbacks')->orderBy('created_at', 'DESC')->limit(10)->get();
     $data['merauke_feedbacks'] = DB::table('merauke_feedbacks')->orderBy('created_at', 'DESC')->limit(10)->get();
+    $data['alor'] = DB::table('grafana_alor')->orderBy('Time', 'DESC')->first();
+    $data['merauke'] = DB::table('grafana_merauke')->orderBy('Time', 'DESC')->first();
+    $data['am_pm'] = [Carbon::parse($data['merauke']->Time)->hour < 18 ? 'am' : 'pm', Carbon::parse($data['alor']->Time)->hour < 18 ? 'am' : 'pm'];
+    $data['cuaca'] = [
+        'Cerah' => "https://bmkg.go.id/asset/img/icon-cuaca/cerah",
+        'Hujan Ringan Sedang' => "https://bmkg.go.id/asset/img/icon-cuaca/hujan ringan",
+        'Hujan Lebat' => "https://bmkg.go.id/asset/img/icon-cuaca/hujan lebat",
+    ];
     return view('dashboard', $data);
 });

@@ -77,18 +77,54 @@
         <div class="flex flex-col items-center justify-center">
             <div class="text-center sm:text-left">
                 <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl text-center">
-                    Pelaporan Cuaca
+                    Info Cuaca Realtime
                 </h1>
                 <p class="mt-1.5 text-sm text-center text-gray-500">
                     Stasiun Metorologi Mopah | Stasiun Meteorologi Alor 🌤️
                 </p>
+            </div>
+            <div class="cuaca flex flex-col sm:flex-row justify-around mt-8 gap-4 w-full">
+                <a href="#" class="flex flex-col justify-center items-center">
+                    <h3 class="mb-2 text-center text-gray-900">
+                        Stasiun Meteorologi Mopah
+                    </h3>
+
+                    <h3 class="mt-2 text-md text-center text-gray-900">
+                        {{ $merauke->Time }}
+                    </h3>
+
+                    <img alt="Art" src="{{$cuaca[$merauke->weather] . '-' . $am_pm[0] . '.png'}}"
+                        class="object-cover w-16" />
+
+                    <h3 class="mt-2 text-md text-center font-bold text-gray-900">
+                        {{ $merauke->weather }}
+                    </h3>
+
+                </a>
+                <a href="#" class="flex flex-col justify-center items-center">
+                    <h3 class="mb-2 text-center text-gray-900">
+                        Stasiun Meteorologi Alor
+                    </h3>
+
+                    <h3 class="mt-2 text-md text-center text-gray-900">
+                        {{ $alor->Time }}
+                    </h3>
+
+                    <img alt="Art" src="{{$cuaca[$alor->weather] . '-' . $am_pm[1] . '.png'}}"
+                        class="object-cover w-16" />
+
+                    <h3 class="mt-2 text-md text-center font-bold text-gray-900">
+                        {{ $alor->weather }}
+                    </h3>
+
+                </a>
             </div>
             <h1 class="mt-5 text-xl font-bold text-gray-900 text-center mb-2">
                 Pelaporan yang Berhasil Diinput
             </h1>
             <div class="flex flex-row justify-around w-full">
                 <div class="overflow-x-auto w-[40%] mt-3">
-                    <h1 class="text-xl font-bold text-gray-900 text-center mb-2">
+                    <h1 class="font-bold text-gray-900 text-center mb-2">
                         Stasiun Meteorologi Alor
                     </h1>
                     <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
@@ -126,7 +162,7 @@
                     </table>
                 </div>
                 <div class="overflow-x-auto w-[40%] mt-3">
-                    <h1 class="text-xl font-bold text-gray-900 text-center mb-2">
+                    <h1 class="font-bold text-gray-900 text-center mb-2">
                         Stasiun Meteorologi Mopah
                     </h1>
                     <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
@@ -165,7 +201,7 @@
                 </div>
             </div>
             <a
-                class="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
+                class="mt-4 inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:rotate-2 hover:scale-110 focus:outline-none focus:ring active:bg-indigo-500"
                 href="/pelaporan"
             >
                 Laporkan
