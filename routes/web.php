@@ -89,6 +89,7 @@ Route::get('/', function(){
     $data['cuaca'] = [
         'Cerah' => "https://bmkg.go.id/asset/img/icon-cuaca/cerah",
         'Hujan Ringan Sedang' => "https://bmkg.go.id/asset/img/icon-cuaca/hujan ringan",
+        'Hujan Ringan-Sedang' => "https://bmkg.go.id/asset/img/icon-cuaca/hujan ringan",
         'Hujan Lebat' => "https://bmkg.go.id/asset/img/icon-cuaca/hujan lebat",
     ];
     return view('dashboard', $data);
