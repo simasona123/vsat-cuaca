@@ -90,7 +90,7 @@
                     </h3>
 
                     <h3 class="mt-2 text-md text-center text-gray-900">
-                        {{ $merauke->Time }}
+                        {{ $merauke->Time }} WIB
                     </h3>
 
                     <img alt="Art" src="{{$cuaca[$merauke->weather] . '-' . $am_pm[0] . '.png'}}"
@@ -107,7 +107,7 @@
                     </h3>
 
                     <h3 class="mt-2 text-md text-center text-gray-900">
-                        {{ $alor->Time }}
+                        {{ $alor->Time }} WIB
                     </h3>
 
                     <img alt="Art" src="{{$cuaca[$alor->weather] . '-' . $am_pm[1] . '.png'}}"
@@ -134,7 +134,7 @@
                             No
                         </th>
                         <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                            Waktu
+                            Waktu (UTC)
                         </th>
                         <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                             Feedback
@@ -172,7 +172,7 @@
                             No
                         </th>
                         <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                            Waktu
+                            Waktu (UTC)
                         </th>
                         <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                             Feedback
