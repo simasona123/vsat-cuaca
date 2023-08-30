@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Info Cuaca Realtime</title>
     @vite(['resources/js/app.js'])
 
     <script>
@@ -125,44 +125,6 @@
             <div class="flex flex-row justify-around w-full">
                 <div class="overflow-x-auto w-[40%] mt-3">
                     <h1 class="font-bold text-gray-900 text-center mb-2">
-                        Stasiun Meteorologi Alor
-                    </h1>
-                    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
-                    <thead class="ltr:text-left rtl:text-right">
-                        <tr>
-                        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                            No
-                        </th>
-                        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                            Waktu (UTC)
-                        </th>
-                        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                            Feedback
-                        </th>
-                        </tr>
-                    </thead>
-                    
-                    @php
-                        $i=1;
-                    @endphp
-                    <tbody class="divide-y divide-gray-200">
-                        @foreach ($alor_feedbacks as $item)
-                            <tr>
-                                <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
-                                    {{$i}}
-                                </td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{$item->created_at}}</td>
-                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{$item->feedback}}</td>
-                            </tr>
-                            @php
-                                $i++;
-                            @endphp
-                        @endforeach
-                    </tbody>
-                    </table>
-                </div>
-                <div class="overflow-x-auto w-[40%] mt-3">
-                    <h1 class="font-bold text-gray-900 text-center mb-2">
                         Stasiun Meteorologi Mopah
                     </h1>
                     <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
@@ -194,6 +156,44 @@
                             </tr>
                             @php
                                 $j++;
+                            @endphp
+                        @endforeach
+                    </tbody>
+                    </table>
+                </div>
+                <div class="overflow-x-auto w-[40%] mt-3">
+                    <h1 class="font-bold text-gray-900 text-center mb-2">
+                        Stasiun Meteorologi Alor
+                    </h1>
+                    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+                    <thead class="ltr:text-left rtl:text-right">
+                        <tr>
+                        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                            No
+                        </th>
+                        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                            Waktu (UTC)
+                        </th>
+                        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                            Feedback
+                        </th>
+                        </tr>
+                    </thead>
+                    
+                    @php
+                        $i=1;
+                    @endphp
+                    <tbody class="divide-y divide-gray-200">
+                        @foreach ($alor_feedbacks as $item)
+                            <tr>
+                                <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                                    {{$i}}
+                                </td>
+                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{$item->created_at}}</td>
+                                <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{$item->feedback}}</td>
+                            </tr>
+                            @php
+                                $i++;
                             @endphp
                         @endforeach
                     </tbody>

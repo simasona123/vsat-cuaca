@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Info Cuaca Realtime</title>
     @vite(['resources/js/app.js'])
 
     <script>
@@ -106,7 +106,7 @@
                     </h3>
 
                     <h3 class="mt-2 text-md text-center text-gray-900">
-                        {{ $merauke->Time }}
+                        {{ $merauke->Time }} WIB
                     </h3>
 
                     <img alt="Art" src="{{$cuaca[$merauke->weather] . '-' . $am_pm[0] . '.png'}}"
@@ -123,7 +123,7 @@
                     </h3>
 
                     <h3 class="mt-2 text-md text-center text-gray-900">
-                        {{ $alor->Time }}
+                        {{ $alor->Time }} WIB
                     </h3>
 
                     <img alt="Art" src="{{$cuaca[$alor->weather] . '-' . $am_pm[1] . '.png'}}"
